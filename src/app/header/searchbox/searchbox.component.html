@@ -1,0 +1,5 @@
+<p>
+  Kindly enter the music you are looking for:
+  <input type="text" name="fname" (input)="name-$event.target.value" #input><br>
+</p>
+<button (click)="getTracks(input.value)"><img src="assets/img/search.png" width=10% height=10% (click)="gotoApi(name)">Submit</button>

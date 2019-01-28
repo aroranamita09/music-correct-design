@@ -1,0 +1,61 @@
+<p>
+  cards works!
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</p>
+<div class="container" style="text-align:center">
+<div class="row" style="text-align:center">
+    <div class="col-md-12" style="font-size:22px">Search Results </div>
+    <br><br><br><br>
+  </div>
+  <div class="row" style="text-align:center" >
+     
+<div class="card" style="width: 18rem;">
+ 
+    <img src="{{Results.image.value}}" class="card-img-top" alt="track Image">
+    <div class="card-body">
+      <h5 class="card-title">{{Results.name}}</h5>
+      <p class="card-text">{{results.artist}}.</p>
+      <a href="#" class="btn btn-primary">ADD TO WISHLIST</a>
+    </div>
+</div>
+</div>
+</div>
+  <!-- <div class="card">
+  <div class="card-header">
+    {{Track}}
+  </div>
+  
+<!--  <div *ngFor="let track of results">  
+    {{track.name}}
+    <div class="card-container">
+      <div *ngFor="let image of results.image">
+        {{image.image}}
+      </div>
+    </div>
+  </div> -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- 
+    
+   
+        <div class="panel panel-default">
+          <div class="panel-heading">{{blog.name| uppercase}}</div>
+          <div class="panel-body">
+   
+            <p>{{blog.artist}}</p>
+            <img class="card-img-top" src='{{blog.image[3]["#text"]}}' alt="Card image cap">
+          </div>
+          <div class="panel-footer">Listners: {{blog.listeners}}<br />
+            <br /><br /><a [routerLink]="['/savetrack',blog.mbid]" class="btn btn-primary">save to playlist</a>
+   
+          </div>
+   
+        </div>
+   
+        <br />
+      </div>
+   
+    </div>
+   
+   </div> -->
