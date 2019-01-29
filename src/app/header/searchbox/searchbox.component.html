@@ -1,5 +1,30 @@
 <p>
   Kindly enter the music you are looking for:
-  <input type="text" name="fname" (input)="name-$event.target.value" #input><br>
+  <input
+    type="text"
+    name="fname"
+    (input)="(name - $event.target.value)"
+    #input
+  />
+  <br/>
 </p>
-<button (click)="getTracks(input.value)"><img src="assets/img/search.png" width=10% height=10% (click)="gotoApi(name)">Submit</button>
+<button (click)="getTracks(input.value)">
+  <img
+    src="assets/img/search.png"
+    width="10%"
+    height="10%"
+    (click)="gotoApi(name)"
+  />Submit
+</button>
+
+<!-- <h2>Search Results</h2>
+<ul class="playlist">
+  <li *ngFor="let track of tracks">
+    <span class="badge">{{track.name}}</span>{{track.url}}
+  </li>
+</ul> -->
+<div *ngIf="tracks">
+  <h2>{{ tracks.name | uppercase }}Details</h2>
+  <div><span>artist:</span>{{tracks.artist}}</div>
+  <div><label>url:<input [(ngModel)]="tracks.name")] placeholder="name/"></label></div>
+</div>

@@ -1,25 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-
-import { MusicService } from '../../music.service';
-import { Observable } from 'rxjs';
-import { Track } from '../../itrack';
+import { Component, OnInit, Input } from "@angular/core";
+import { SearchboxComponent } from '../../header/searchbox/searchbox.component';
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.css']
+  selector: "app-cards",
+  templateUrl: "./cards.component.html",
+  styleUrls: ["./cards.component.css"]
 })
 export class CardsComponent implements OnInit {
-  private results: any = [];
-  constructor(private ms: MusicService) { }
+  tracksDisplay;
+  results: any = [];
+  constructor() {}
 
+  @Input() tracks: SearchboxComponent;
+  
   ngOnInit() {
-    console.log(this.results.name);
+    console.log("Hello");
+    this.tracksDisplay = this.tracks;
   }
-  getTracks(input) {
-    this.ms.SearchTrack(input).subscribe((data) => {
-      this.results = data;
-      console.log(data);
-    });
- }
-
+  
 }
