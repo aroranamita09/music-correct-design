@@ -13,18 +13,57 @@
     src="assets/img/search.png"
     width="10%"
     height="10%"
-    (click)="gotoApi(name)"
   />Submit
 </button>
-
-<!-- <h2>Search Results</h2>
+<link
+rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+crossorigin="anonymous"
+/>
+ <!-- <h2>Search Results</h2>
+  <div class="card" style="width: 18rem;">
 <ul class="playlist">
   <li *ngFor="let track of tracks">
-    <span class="badge">{{track.name}}</span>{{track.url}}
-  </li>
-</ul> -->
-<div *ngIf="tracks">
-  <h2>{{ tracks.name | uppercase }}Details</h2>
-  <div><span>artist:</span>{{tracks.artist}}</div>
-  <div><label>url:<input [(ngModel)]="tracks.name")] placeholder="name/"></label></div>
-</div>
+    <img class="card-img-top" src="{{track.url}}" alt="Card image cap">
+    <span class="badge">
+      <div class="card-body"><h5 class="card-title">{{track.name}}</h5></div></span>
+       <p class="card-text">{{track.artist}}</p>
+        <a href="" class="btn btn-primary">Add to wishlist</a> -->
+  <!-- </li>
+</ul>
+ </div>   -->
+
+
+ <div class="container" style="text-align:center">
+    <div class="row" style="text-align:center">
+      <div class="col-md-12" style="font-size:22px">Search Results </div>
+      <br><br><br><br>
+    </div>
+    <div class="row" style="text-align:center" >
+      <div *ngFor="let blog of tracks" class="col-md-4">
+   
+        <div class="panel panel-default">
+          <div class="panel-heading">{{blog.name| uppercase}}</div>
+          <div class="panel-body">
+   
+            <p>{{blog.artist}}</p>
+            <img class="card-img-top" src='{{blog.image[3]["#text"]}}' alt="Card image cap">
+          </div>
+          <div class="panel-footer">Listners: {{blog.listeners}}<br />
+            <br /><br /><a [routerLink]="['/savetrack',blog.mbid]" class="btn btn-primary">save to playlist</a>
+            <!-- <a [routerLink]="['/deletetrack',blog.mbid]" class="btn btn-primary">delete from playlist</a> -->
+          </div>
+   
+        </div>
+   
+        <br />
+      </div>
+   
+    </div>
+   
+   </div>
+
+      
+    
+ 

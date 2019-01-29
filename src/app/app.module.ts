@@ -17,6 +17,9 @@ import { AddComponent } from './body/cards/add/add.component';
 import { DeleteComponent } from './body/cards/delete/delete.component';
 import { UpdateComponent } from './body/cards/update/update.component';
 import { CardDisplayComponent } from './body/cards/card-display/card-display.component';
+import { SearchboxService } from './header/searchbox/searchbox.service';
+import { GetllTracksInLocalComponent } from './getll-tracks-in-local/getll-tracks-in-local.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,16 @@ import { CardDisplayComponent } from './body/cards/card-display/card-display.com
     AddComponent,
     DeleteComponent,
     UpdateComponent,
-    CardDisplayComponent
+    CardDisplayComponent,
+    GetllTracksInLocalComponent
   ],
   imports: [
-  BrowserModule,
+BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [MusicService],
+  providers: [MusicService, SearchboxService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

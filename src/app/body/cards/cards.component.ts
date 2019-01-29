@@ -1,20 +1,17 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { SearchboxComponent } from '../../header/searchbox/searchbox.component';
+import { Component, ViewChild , AfterViewInit} from "@angular/core";
+import { SearchboxService } from '../../header/searchbox/searchbox.service';
 @Component({
   selector: "app-cards",
   templateUrl: "./cards.component.html",
   styleUrls: ["./cards.component.css"]
 })
-export class CardsComponent implements OnInit {
-  tracksDisplay;
-  results: any = [];
-  constructor() {}
-
-  @Input() tracks: SearchboxComponent;
-  
-  ngOnInit() {
+export class CardsComponent implements AfterViewInit {
+  constructor(private searchService: SearchboxService) {}
+  private tracks = [];
+  ngAfterViewInit() {
     console.log("Hello");
-    this.tracksDisplay = this.tracks;
+    // this.tracks = this.searchService.returnTracks();
+    // console.log('Cards' + this.tracks);
   }
-  
 }
+
